@@ -1,0 +1,41 @@
+#none of this probably is right yet
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quarto-new-content"
+version = "1.0"
+description = 'Hugo like new content command for Quarto'
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+keywords = []
+authors = [{ name = "Marcos Huerta", email = "marcos@marcoshuerta.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["pyyaml"]
+
+#[project.urls]
+Documentation = "https://github.com/astrowonk/quarto-new-content/#readme"
+Issues = "https://github.com/astrowonk/quarto-new-content/issues"
+Source = "https://github.com/astrowonk/quarto-new-content"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/__init__.py"]
+
+[project.scripts]
+quarto-new-content = "__init__:main"
