@@ -19,3 +19,10 @@ quarto-new-content posts/my-first-post.qmd
 
 and then open the file in your editor, and start editing with a pre-populated header and the file in the directory you specified.
 
+It will also create new directories, for example:
+
+```
+quarto-new-content posts/my-first-post/index.qmd
+```
+
+will work.
