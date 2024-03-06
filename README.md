@@ -1,5 +1,5 @@
 
-I create my webs site and my blog with [Quarto](https:/quarto.org), having migrated from Hugo. Hugo has the nice shortcut command:
+I create my website and blog with [Quarto](https:/quarto.org), having migrated from Hugo. Hugo has the nice shortcut command:
 
 ```
 hugo new content posts/my-first-post.md
