@@ -11,11 +11,11 @@ which creates an empty file with the date header and draft: True. This is a hand
 pip install .
 ```
 
-Then the `quarto-new-content` command should be available.
+Then the `quarto-new-content` command should be available. You can then do something like:
 
 ```
 quarto-new-content posts/my-first-post.qmd
 ```
 
-and then open the file in your editor, and start editing. No need to manually typo ISO format date strings in your header!
+and then open the file in your editor, and start editing with a pre-populated header and the file in the directory you specified.
 
