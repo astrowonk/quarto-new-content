@@ -36,6 +36,5 @@ def main():
     file.write_text(yaml_header)
 
 
-if __name__ == '__main__':                                                                                            \
-
+if __name__ == '__main__':
     main()
