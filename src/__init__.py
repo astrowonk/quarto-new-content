@@ -6,23 +6,26 @@ import argparse
 from pathlib import Path
 
 
-def make_yaml():
-    return dump({
-        'title':
-        'New post',
-        "date":
-        datetime.datetime.now().astimezone().isoformat(timespec='seconds'),
-        'draft':
-        True,
-    })
+def make_yaml(title=None):
+    return dump(
+        {
+            'title':
+            title or 'New post',
+            "date":
+            datetime.datetime.now().astimezone().isoformat(timespec='seconds'),
+            'draft':
+            True,
+        },
+        sort_keys=False)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('path', type=str)
+    parser.add_argument('--title', type=str, default=None)
     args = parser.parse_args()
 
-    yaml_header = make_yaml()
+    yaml_header = make_yaml(args.title)
     yaml_header = '---\n' + yaml_header + '---\n\n'
 
     file = Path(args.path)
@@ -33,6 +36,6 @@ def main():
     file.write_text(yaml_header)
 
 
-if __name__ == '__main__':                                                                    \
+if __name__ == '__main__':                                                                                            \
 
     main()
