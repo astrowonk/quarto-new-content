@@ -9,14 +9,12 @@ from pathlib import Path
 def make_yaml(title=None):
     return dump(
         {
-            'title':
-            title or 'New post',
-            "date":
-            datetime.datetime.now().astimezone().isoformat(timespec='seconds'),
-            'draft':
-            True,
+            'title': title or 'New post',
+            'date': datetime.datetime.now().astimezone().isoformat(timespec='seconds'),
+            'draft': True,
         },
-        sort_keys=False)
+        sort_keys=False,
+    )
 
 
 def main():
@@ -29,9 +27,8 @@ def main():
     yaml_header = '---\n' + yaml_header + '---\n\n'
 
     file = Path(args.path)
-    assert file.parts[-1].endswith(
-        'qmd'), "Input path must end with a .qmd file"
-    assert not file.exists(), "File already exists."
+    assert file.parts[-1].endswith('qmd'), 'Input path must end with a .qmd file'
+    assert not file.exists(), 'File already exists.'
     file.parent.mkdir(parents=True, exist_ok=True)
     file.write_text(yaml_header)
 
